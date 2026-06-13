@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>笔记详情｜翻译写作专项练习器</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./note-detail.css" />
+  </head>
+  <body class="note-browser-body">
+    <nav class="main-nav" aria-label="主导航">
+      <a class="nav-item" href="./index.html">主页</a>
+      <a class="nav-item" href="./translation-library.html">翻译题库</a>
+      <a class="nav-item" href="./writing-library.html">写作题库</a>
+      <a class="nav-item is-active" href="./notes.html">笔记</a>
+      <a class="nav-item" href="./statistics.html">统计</a>
+      <details class="settings-menu">
+        <summary class="nav-item">设置</summary>
+        <div class="settings-dropdown">
+          <a href="./add-question.html">添加题目</a>
+        </div>
+      </details>
+    </nav>
+
+    <header class="note-browser-header">
+      <a class="back-link" href="./notes.html"><span aria-hidden="true">←</span>返回笔记</a>
+      <div>
+        <p class="section-kicker">Notebook Archive</p>
+        <h1>笔记详情</h1>
+      </div>
+      <span id="result-count">6 条笔记</span>
+    </header>
+
+    <main class="note-browser-layout">
+      <aside class="filter-panel" aria-labelledby="filter-title">
+        <header class="panel-title">
+          <div><p class="section-kicker">Filter</p><h2 id="filter-title">筛选</h2></div>
+          <button id="reset-filters" type="button">重置</button>
+        </header>
+
+        <fieldset class="filter-group">
+          <legend>练习类型</legend>
+          <div class="filter-options" data-filter="type">
+            <button class="is-selected" type="button" data-value="all">全部</button>
+            <button type="button" data-value="translation">翻译</button>
+            <button type="button" data-value="writing">写作</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>考试等级</legend>
+          <div class="filter-options stacked-options" data-filter="level">
+            <button class="is-selected" type="button" data-value="all">全部等级</button>
+            <button type="button" data-value="CET4">四级</button>
+            <button type="button" data-value="CET6">六级</button>
+            <button type="button" data-value="CATTI">CATTI</button>
+            <button type="button" data-value="BUSINESS">商务英语</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="filter-group topic-filter">
+          <legend>题材 / 主题</legend>
+          <div id="topic-options" class="filter-options stacked-options" data-filter="topic">
+            <button class="is-selected" type="button" data-value="all">全部题材</button>
+            <button type="button" data-value="传统文化">传统文化</button>
+            <button type="button" data-value="科技教育">科技教育</button>
+            <button type="button" data-value="社会生活">社会生活</button>
+            <button type="button" data-value="经济贸易">经济贸易</button>
+          </div>
+          <div class="custom-topic">
+            <input id="custom-topic-input" type="text" placeholder="输入自定义题材" />
+            <button id="add-custom-topic" type="button">添加</button>
+          </div>
+        </fieldset>
+
+        <button id="apply-filters" class="primary-action apply-filters" type="button">
+          应用筛选
+        </button>
+      </aside>
+
+      <section class="note-archive" aria-labelledby="archive-title">
+        <header class="panel-title archive-heading">
+          <div>
+            <p class="section-kicker">Archive</p>
+            <h2 id="archive-title">笔记陈列</h2>
+          </div>
+          <label class="archive-search">
+            <span class="visually-hidden">搜索笔记</span>
+            <input id="note-search" type="search" placeholder="搜索词语、句型或主题" />
+          </label>
+        </header>
+
+        <div id="note-list" class="archive-list">
+          <article class="archive-note" data-type="translation" data-level="CET6" data-topic="传统文化">
+            <header><span>翻译 · 六级</span><time>今天</time></header>
+            <h3>传统节日与家庭团聚</h3>
+            <p>wherever they are；reunite with their families；让步结构 while...</p>
+            <footer><span>传统文化</span><button type="button" data-review>加入复习</button></footer>
+          </article>
+          <article class="archive-note" data-type="translation" data-level="CATTI" data-topic="经济贸易">
+            <header><span>翻译 · CATTI</span><time>昨天</time></header>
+            <h3>经济高质量发展</h3>
+            <p>high-quality development；增强发展韧性；推动产业升级。</p>
+            <footer><span>经济贸易</span><button type="button" data-review>加入复习</button></footer>
+          </article>
+          <article class="archive-note" data-type="writing" data-level="CET6" data-topic="科技教育">
+            <header><span>写作 · 六级</span><time>06月12日</time></header>
+            <h3>数字工具与学习效率</h3>
+            <p>when used purposefully；论证中补充限制条件，避免单边观点。</p>
+            <footer><span>科技教育</span><button type="button" data-review>加入复习</button></footer>
+          </article>
+          <article class="archive-note" data-type="writing" data-level="CET4" data-topic="社会生活">
+            <header><span>写作 · 四级</span><time>06月11日</time></header>
+            <h3>大学生时间管理</h3>
+            <p>开头明确观点；使用 prioritize tasks 和 make a realistic schedule。</p>
+            <footer><span>社会生活</span><button type="button" data-review>加入复习</button></footer>
+          </article>
+          <article class="archive-note" data-type="translation" data-level="CET4" data-topic="科技教育">
+            <header><span>翻译 · 四级</span><time>06月09日</time></header>
+            <h3>中国高铁的发展</h3>
+            <p>high-speed railway network；缩短城市间的旅行时间。</p>
+            <footer><span>科技教育</span><button type="button" data-review>加入复习</button></footer>
+          </article>
+          <article class="archive-note" data-type="writing" data-level="BUSINESS" data-topic="经济贸易">
+            <header><span>写作 · 商务英语</span><time>06月08日</time></header>
+            <h3>项目延期说明邮件</h3>
+            <p>表达歉意、说明原因、给出新时间表，并保持专业而清楚的语气。</p>
+            <footer><span>经济贸易</span><button type="button" data-review>加入复习</button></footer>
+          </article>
+        </div>
+
+        <p id="empty-result" class="empty-result" hidden>没有符合当前条件的笔记。</p>
+      </section>
+
+      <aside class="review-panel" aria-labelledby="review-title">
+        <header class="panel-title">
+          <div><p class="section-kicker">Daily Review</p><h2 id="review-title">今日复习</h2></div>
+          <span id="review-total">3 项</span>
+        </header>
+
+        <div id="review-list" class="review-list">
+          <article>
+            <span>01</span>
+            <div><strong>reunite with their families</strong><small>翻译 · 传统文化</small></div>
+          </article>
+          <article>
+            <span>02</span>
+            <div><strong>when used purposefully</strong><small>写作 · 科技教育</small></div>
+          </article>
+          <article>
+            <span>03</span>
+            <div><strong>high-quality development</strong><small>翻译 · 经济贸易</small></div>
+          </article>
+        </div>
+
+        <div class="review-progress">
+          <div><span>今日进度</span><strong>0 / <b id="review-target">3</b></strong></div>
+          <div class="completion-track"><i id="review-progress-bar" style="width: 0%"></i></div>
+        </div>
+
+        <button id="start-review" class="primary-action start-review" type="button">
+          开始复习
+        </button>
+      </aside>
+    </main>
+
+    <div id="note-message" class="note-message" role="status" aria-live="polite"></div>
+    <script src="./note-detail.js"></script>
+  </body>
+</html>

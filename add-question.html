@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>添加题目｜翻译写作专项练习器</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./add-question.css" />
+  </head>
+  <body class="add-question-body">
+    <nav class="main-nav" aria-label="主导航">
+      <a class="nav-item" href="./index.html">主页</a>
+      <a class="nav-item" href="./translation-library.html">翻译题库</a>
+      <a class="nav-item" href="./writing-library.html">写作题库</a>
+      <a class="nav-item" href="./notes.html">笔记</a>
+      <a class="nav-item" href="./statistics.html">统计</a>
+      <details class="settings-menu">
+        <summary class="nav-item is-active">设置</summary>
+        <div class="settings-dropdown">
+          <a href="./add-question.html">添加题目</a>
+        </div>
+      </details>
+    </nav>
+
+    <main class="question-builder">
+      <form id="question-form" class="question-form">
+        <section class="question-editor" aria-labelledby="editor-title">
+          <header class="builder-heading">
+            <div>
+              <p class="section-kicker">Question Editor</p>
+              <h1 id="editor-title">添加题目</h1>
+            </div>
+            <span id="question-total">已添加 0 题</span>
+          </header>
+
+          <label class="field-group title-field">
+            <span>题目标题</span>
+            <input
+              id="question-title"
+              name="title"
+              type="text"
+              placeholder="例如：中国传统节日与家庭团聚"
+              required
+            />
+          </label>
+
+          <label class="field-group content-field">
+            <span id="content-label">中文原文</span>
+            <textarea
+              id="question-content"
+              name="content"
+              placeholder="输入需要翻译的中文原文……"
+              required
+            ></textarea>
+          </label>
+
+          <label class="field-group reference-field">
+            <span id="reference-label">参考译文</span>
+            <textarea
+              id="question-reference"
+              name="reference"
+              placeholder="输入参考译文，可暂时留空……"
+            ></textarea>
+          </label>
+        </section>
+
+        <aside class="question-options" aria-labelledby="options-title">
+          <header class="builder-heading">
+            <div>
+              <p class="section-kicker">Configuration</p>
+              <h2 id="options-title">选项</h2>
+            </div>
+          </header>
+
+          <fieldset class="option-fieldset">
+            <legend>练习类型</legend>
+            <div class="segmented-options">
+              <label>
+                <input type="radio" name="type" value="translation" checked />
+                <span>翻译</span>
+              </label>
+              <label>
+                <input type="radio" name="type" value="writing" />
+                <span>写作</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-group">
+            <span>考试等级</span>
+            <select id="question-level" name="level">
+              <option value="CET4">四级</option>
+              <option value="CET6" selected>六级</option>
+              <option value="CATTI">CATTI</option>
+              <option value="BUSINESS">商务英语</option>
+            </select>
+          </label>
+
+          <label class="field-group">
+            <span>题材</span>
+            <input
+              id="question-topic"
+              name="topic"
+              type="text"
+              list="topic-list"
+              placeholder="选择或输入题材"
+              required
+            />
+            <datalist id="topic-list">
+              <option value="传统文化"></option>
+              <option value="社会发展"></option>
+              <option value="科技教育"></option>
+              <option value="经济贸易"></option>
+              <option value="生态环境"></option>
+              <option value="旅游与城市"></option>
+            </datalist>
+          </label>
+
+          <div class="numeric-fields">
+            <label class="field-group">
+              <span>建议用时</span>
+              <span class="number-input">
+                <input id="question-duration" name="duration" type="number" min="1" max="180" value="15" />
+                <small>分钟</small>
+              </span>
+            </label>
+            <label class="field-group">
+              <span>满分</span>
+              <span class="number-input">
+                <input id="question-score" name="score" type="number" min="1" max="100" value="100" />
+                <small>分</small>
+              </span>
+            </label>
+          </div>
+
+          <label class="field-group">
+            <span>难度</span>
+            <select id="question-difficulty" name="difficulty">
+              <option value="basic">基础</option>
+              <option value="intermediate" selected>进阶</option>
+              <option value="advanced">专业</option>
+            </select>
+          </label>
+
+          <div class="question-preview">
+            <span>当前配置</span>
+            <strong id="configuration-preview">翻译 · 六级 · 15 分钟</strong>
+          </div>
+
+          <button class="primary-action submit-question" type="submit">
+            添加到题库
+          </button>
+        </aside>
+      </form>
+    </main>
+
+    <div id="question-message" class="question-message" role="status" aria-live="polite">
+      题目已添加
+    </div>
+    <script src="./add-question.js"></script>
+  </body>
+</html>

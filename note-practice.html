@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>笔记练习｜翻译写作专项练习器</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./note-practice.css" />
+  </head>
+  <body class="note-practice-body">
+    <nav class="main-nav" aria-label="主导航">
+      <a class="nav-item" href="./index.html">主页</a>
+      <a class="nav-item" href="./translation-library.html">翻译题库</a>
+      <a class="nav-item" href="./writing-library.html">写作题库</a>
+      <a class="nav-item is-active" href="./notes.html">笔记</a>
+      <a class="nav-item" href="./statistics.html">统计</a>
+      <details class="settings-menu">
+        <summary class="nav-item">设置</summary>
+        <div class="settings-dropdown">
+          <a href="./add-question.html">添加题目</a>
+        </div>
+      </details>
+    </nav>
+
+    <header class="practice-header">
+      <a class="back-link" href="./note-detail.html"><span aria-hidden="true">←</span>返回笔记详情</a>
+      <div>
+        <p class="section-kicker">Active Recall</p>
+        <h1>笔记练习</h1>
+      </div>
+      <span id="session-progress">第 1 / 3 项</span>
+    </header>
+
+    <main class="note-practice-layout">
+      <div class="practice-main">
+        <section class="review-strip" aria-labelledby="review-strip-title">
+          <header class="panel-heading">
+            <div><p class="section-kicker">Review Queue</p><h2 id="review-strip-title">复习笔记</h2></div>
+            <span>左右滑动查看</span>
+          </header>
+          <div id="review-cards" class="review-cards"></div>
+        </section>
+
+        <section class="ai-practice" aria-labelledby="ai-practice-title">
+          <header class="panel-heading">
+            <div><p class="section-kicker">AI Practice</p><h2 id="ai-practice-title">实时练习</h2></div>
+            <button id="next-question" type="button">换一题</button>
+          </header>
+
+          <div id="conversation" class="conversation" aria-live="polite">
+            <article class="message ai-message">
+              <span>AI</span>
+              <div>
+                <p id="question-text">请使用 “reunite with their families” 完成一个与春节有关的英文句子。</p>
+                <small>请直接输入答案，我会根据本轮笔记给出反馈。</small>
+              </div>
+            </article>
+          </div>
+
+          <form id="answer-form" class="practice-composer">
+            <textarea
+              id="practice-answer"
+              placeholder="输入你的答案……"
+              aria-label="笔记练习答案"
+              required
+            ></textarea>
+            <button class="primary-action" type="submit">发送答案</button>
+          </form>
+        </section>
+      </div>
+
+      <aside class="session-record" aria-labelledby="record-title">
+        <header class="panel-heading">
+          <div><p class="section-kicker">Session Log</p><h2 id="record-title">练习记录</h2></div>
+          <span id="session-score">0 分</span>
+        </header>
+
+        <div class="record-metrics">
+          <article><strong id="answered-count">0</strong><span>已回答</span></article>
+          <article><strong id="correct-count">0</strong><span>掌握</span></article>
+        </div>
+
+        <div id="record-list" class="record-list">
+          <p class="record-empty">完成练习后，记录会显示在这里。</p>
+        </div>
+
+        <label class="session-note">
+          <span>本轮复习总结</span>
+          <textarea id="session-note" placeholder="记录仍需巩固的内容……"></textarea>
+        </label>
+
+        <button id="save-session" class="primary-action save-session" type="button">
+          保存练习记录
+        </button>
+      </aside>
+    </main>
+
+    <div id="practice-message" class="practice-message" role="status" aria-live="polite"></div>
+    <script src="./note-practice.js"></script>
+  </body>
+</html>

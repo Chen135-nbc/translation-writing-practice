@@ -53,7 +53,7 @@ textarea {
 
 .main-nav {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   align-items: stretch;
   width: 100%;
   height: 68px;
@@ -99,6 +99,62 @@ textarea {
   background: var(--blue);
   border-radius: 2px;
   content: "";
+}
+
+.settings-menu {
+  position: relative;
+  min-width: 0;
+}
+
+.settings-menu > summary {
+  height: 100%;
+  list-style: none;
+  cursor: pointer;
+}
+
+.settings-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.settings-menu > summary::before {
+  margin-right: 6px;
+  color: var(--blue);
+  content: "⌄";
+  font-size: 0.85em;
+}
+
+.settings-menu:hover .settings-dropdown,
+.settings-menu:focus-within .settings-dropdown,
+.settings-menu[open] .settings-dropdown {
+  display: grid;
+}
+
+.settings-dropdown {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 7px);
+  right: 0;
+  display: none;
+  width: 160px;
+  padding: 7px;
+  background: var(--panel);
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 22px rgb(23 32 42 / 16%);
+}
+
+.settings-dropdown a {
+  padding: 11px 12px;
+  color: var(--ink);
+  border-radius: 4px;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.settings-dropdown a:hover,
+.settings-dropdown a:focus-visible {
+  color: var(--blue-dark);
+  background: var(--blue-soft);
 }
 
 button:focus-visible,
@@ -171,8 +227,14 @@ textarea:focus-visible {
   }
 
   .nav-item {
-    min-width: 82px;
+    min-width: 70px;
     padding: 0 0.4rem;
     font-size: 0.88rem;
+  }
+
+  .settings-dropdown {
+    position: fixed;
+    top: 54px;
+    right: 8px;
   }
 }
