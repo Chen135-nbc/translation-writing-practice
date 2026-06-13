@@ -1,0 +1,141 @@
+.section-page {
+  min-height: calc(100vh - 68px);
+  padding: 42px 5vw 60px;
+}
+
+.page-heading {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.page-heading h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+}
+
+.page-heading > p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.notes-workspace {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) minmax(240px, 0.65fr);
+  gap: 28px;
+}
+
+.notes-category,
+.recent-notes {
+  padding: 28px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 2px 2px 0 rgb(23 32 42 / 10%);
+}
+
+.notes-category {
+  display: flex;
+  min-height: 540px;
+  flex-direction: column;
+}
+
+.notes-category-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.notes-category-heading h2,
+.recent-notes h2 {
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+.notes-category-heading > span {
+  color: var(--muted);
+}
+
+.note-list {
+  margin: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.note-list-item {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-height: 92px;
+  padding: 18px 4px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: left;
+  cursor: pointer;
+}
+
+.note-list-item:hover {
+  background: var(--blue-soft);
+}
+
+.note-list-item span,
+.recent-notes p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.notes-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.recent-notes {
+  background: var(--panel-strong);
+  border-top: 5px solid var(--blue);
+}
+
+.review-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 52px 0 22px;
+}
+
+.review-count strong {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.recent-notes .secondary-action {
+  width: 100%;
+  margin-top: 30px;
+}
+
+@media (max-width: 1100px) {
+  .notes-workspace {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .recent-notes {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .section-page {
+    padding: 28px 14px 36px;
+  }
+
+  .notes-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-category {
+    min-height: 460px;
+  }
+
+  .recent-notes {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="翻译写作专项练习器，面向四六级与 CATTI 翻译练习。"
+    />
+    <title>翻译写作专项练习器</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./home.css" />
+  </head>
+  <body>
+    <main class="page-stack">
+      <section class="home-page" aria-label="主页">
+        <nav class="main-nav" aria-label="主导航">
+          <a class="nav-item is-active" href="./index.html">主页</a>
+          <a class="nav-item" href="./translation-library.html">翻译题库</a>
+          <a class="nav-item" href="./writing-library.html">写作题库</a>
+          <a class="nav-item" href="./notes.html">笔记</a>
+          <a class="nav-item" href="./statistics.html">统计</a>
+        </nav>
+
+        <div class="dashboard">
+          <div class="dashboard-left">
+            <section class="practice-panel" aria-label="练习分类">
+              <button class="practice-card" type="button">四级翻译</button>
+              <button class="practice-card" type="button">四级作文</button>
+              <button class="practice-card" type="button">六级翻译</button>
+              <button class="practice-card" type="button">六级作文</button>
+              <button class="practice-card" type="button">CATTI翻译</button>
+              <button class="practice-card" type="button">商务英语写作</button>
+            </section>
+
+            <section class="statistics-panel" aria-label="练习统计">
+              <article class="chart-card">
+                <h2>练习量</h2>
+                <div class="bar-chart" aria-label="写作与翻译练习量柱状图">
+                  <div class="chart-grid">
+                    <span>20</span>
+                    <span>15</span>
+                    <span>10</span>
+                    <span>5</span>
+                    <span>0</span>
+                  </div>
+                  <div class="bar-groups">
+                    <div class="bar-group">
+                      <div class="bars">
+                        <i class="bar writing" style="--value: 50%"></i>
+                        <i class="bar translation" style="--value: 75%"></i>
+                      </div>
+                      <span>四级</span>
+                    </div>
+                    <div class="bar-group">
+                      <div class="bars">
+                        <i class="bar writing" style="--value: 60%"></i>
+                        <i class="bar translation" style="--value: 100%"></i>
+                      </div>
+                      <span>六级</span>
+                    </div>
+                    <div class="bar-group">
+                      <div class="bars">
+                        <i class="bar writing" style="--value: 75%"></i>
+                        <i class="bar translation" style="--value: 50%"></i>
+                      </div>
+                      <span>笔译/外贸</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <span><i class="legend-color writing-color"></i>写作</span>
+                  <span><i class="legend-color translation-color"></i>翻译</span>
+                </div>
+              </article>
+
+              <article class="chart-card">
+                <h2>近5次练习成绩</h2>
+                <div class="line-chart" aria-label="四级与六级翻译成绩折线图">
+                  <div class="line-y-axis">
+                    <span>100</span>
+                    <span>75</span>
+                    <span>50</span>
+                    <span>25</span>
+                    <span>0</span>
+                  </div>
+                  <svg
+                    class="line-chart-svg"
+                    viewBox="0 0 500 300"
+                    role="img"
+                    aria-label="近五次练习成绩"
+                    preserveAspectRatio="none"
+                  >
+                    <g class="grid-lines">
+                      <line x1="0" y1="0" x2="500" y2="0"></line>
+                      <line x1="0" y1="75" x2="500" y2="75"></line>
+                      <line x1="0" y1="150" x2="500" y2="150"></line>
+                      <line x1="0" y1="225" x2="500" y2="225"></line>
+                      <line x1="0" y1="300" x2="500" y2="300"></line>
+                    </g>
+                    <polyline
+                      class="score-line cet4"
+                      points="0,250 125,225 250,155 375,12 500,40"
+                    ></polyline>
+                    <polyline
+                      class="score-line cet6"
+                      points="0,145 125,185 250,95 375,135 500,65"
+                    ></polyline>
+                  </svg>
+                  <div class="line-x-axis">
+                    <span>1</span><span>2</span><span>3</span>
+                    <span>4</span><span>5</span>
+                  </div>
+                </div>
+                <div class="chart-legend line-legend">
+                  <span><i class="legend-line cet4-color"></i>四级翻译</span>
+                  <span><i class="legend-line cet6-color"></i>六级翻译</span>
+                </div>
+              </article>
+            </section>
+          </div>
+
+          <section class="notes-panel" aria-label="笔记练习">
+            <article class="note-column">
+              <button class="note-preview" type="button">翻译笔记</button>
+              <button class="note-enter" type="button">进入翻译笔记练习</button>
+            </article>
+            <article class="note-column">
+              <button class="note-preview" type="button">写作笔记</button>
+              <button class="note-enter" type="button">进入写作笔记练习</button>
+            </article>
+          </section>
+        </div>
+
+      </section>
+
+      <section
+        class="welcome-page"
+        aria-labelledby="welcome-title"
+        aria-label="点击进入主页"
+        role="button"
+        tabindex="0"
+      >
+        <h1 id="welcome-title">欢迎使用翻译写作专项练习器</h1>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

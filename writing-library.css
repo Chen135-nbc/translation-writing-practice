@@ -1,0 +1,10 @@
+@import url("./translation-library.css");
+
+.continue-practice {
+  border-left-color: #526f91;
+}
+
+.level-tab.is-selected,
+.completion-track i {
+  background: #526f91;
+}
