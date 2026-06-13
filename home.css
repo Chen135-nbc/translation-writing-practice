@@ -64,11 +64,17 @@ body {
 }
 
 .practice-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 92px;
   padding: 1rem;
   background: var(--panel-strong);
   border: 1px solid var(--line);
   font-size: clamp(1.15rem, 1.55vw, 1.8rem);
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
 }
 
 .practice-card:hover,

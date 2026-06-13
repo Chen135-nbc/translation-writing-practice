@@ -9,13 +9,17 @@ const draftCard = document.querySelector(".draft-card");
 const clearDraft = document.querySelector("#clear-draft");
 const submitAnswer = document.querySelector("#submit-answer");
 const submitMessage = document.querySelector("#submit-message");
+const practiceBody = document.body;
+const answerKey = practiceBody.dataset.answerKey;
+const draftKey = practiceBody.dataset.draftKey;
+const submitUrl = practiceBody.dataset.submitUrl;
 
 let elapsedSeconds = 0;
 let timerRunning = true;
 let saveTimer;
 
-answerInput.value = localStorage.getItem("translation-answer") || "";
-draftInput.value = localStorage.getItem("translation-draft") || "";
+answerInput.value = localStorage.getItem(answerKey) || "";
+draftInput.value = localStorage.getItem(draftKey) || "";
 
 function countWords(value) {
   return value.trim() ? value.trim().split(/\s+/).length : 0;
@@ -29,8 +33,8 @@ function queueSave() {
   saveState.textContent = "正在保存…";
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
-    localStorage.setItem("translation-answer", answerInput.value);
-    localStorage.setItem("translation-draft", draftInput.value);
+    localStorage.setItem(answerKey, answerInput.value);
+    localStorage.setItem(draftKey, draftInput.value);
     saveState.textContent = "草稿已保存";
   }, 450);
 }
@@ -67,15 +71,17 @@ draftMode.addEventListener("change", () => {
 
 clearDraft.addEventListener("click", () => {
   draftInput.value = "";
-  localStorage.removeItem("translation-draft");
+  localStorage.removeItem(draftKey);
   draftInput.focus();
 });
 
 submitAnswer.addEventListener("click", () => {
-  localStorage.setItem("translation-answer", answerInput.value);
+  localStorage.setItem(answerKey, answerInput.value);
   saveState.textContent = "译文已提交";
   submitMessage.classList.add("is-visible");
-  setTimeout(() => submitMessage.classList.remove("is-visible"), 1800);
+  setTimeout(() => {
+    window.location.href = submitUrl;
+  }, 500);
 });
 
 updateWordCount();

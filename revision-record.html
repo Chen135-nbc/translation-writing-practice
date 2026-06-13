@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>翻译修改记录｜翻译写作专项练习器</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./revision-record.css" />
+  </head>
+  <body class="revision-record-body" data-record-type="translation">
+    <nav class="main-nav" aria-label="主导航">
+      <a class="nav-item" href="./index.html">主页</a>
+      <a class="nav-item" href="./translation-library.html">翻译题库</a>
+      <a class="nav-item" href="./writing-library.html">写作题库</a>
+      <a class="nav-item" href="./notes.html">笔记</a>
+      <a class="nav-item" href="./statistics.html">统计</a>
+    </nav>
+
+    <header class="review-toolbar">
+      <a class="back-link" href="./translation-library.html">
+        <span aria-hidden="true">←</span>
+        <span>返回翻译题库</span>
+      </a>
+      <div class="review-title">
+        <span>翻译修改记录 · 六级</span>
+        <strong>中国传统节日与家庭团聚</strong>
+      </div>
+      <span id="detail-save-state">内容已保存</span>
+    </header>
+
+    <main class="review-layout">
+      <section class="review-column feedback-column" aria-labelledby="feedback-title">
+        <article class="question-card">
+          <header class="column-heading">
+            <div>
+              <p class="section-kicker">Source</p>
+              <h1 id="feedback-title">题目</h1>
+            </div>
+            <span>约 150 字</span>
+          </header>
+          <p>
+            春节是中国最重要的传统节日之一。春节期间，无论身处何地，人们都会尽量回到家乡与家人团聚。随着生活方式的变化，庆祝方式日益多样，但家庭团聚仍是春节最重要的意义。
+          </p>
+        </article>
+
+        <article class="feedback-card">
+          <header class="column-heading">
+            <div>
+              <p class="section-kicker">AI Feedback</p>
+              <h2>批改建议</h2>
+            </div>
+            <span>3 项</span>
+          </header>
+
+          <div class="feedback-list">
+            <section>
+              <span class="feedback-index">01</span>
+              <div>
+                <h3>信息表达</h3>
+                <p>“无论身处何地”可以使用 wherever they are，使句子更加自然、紧凑。</p>
+              </div>
+            </section>
+            <section>
+              <span class="feedback-index">02</span>
+              <div>
+                <h3>词语选择</h3>
+                <p>“团聚”在节日语境中使用 reunite with their families，比 get together 更正式。</p>
+              </div>
+            </section>
+            <section>
+              <span class="feedback-index">03</span>
+              <div>
+                <h3>句间逻辑</h3>
+                <p>最后一句可加入 While the ways of celebration have changed，突出让步关系。</p>
+              </div>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="review-column revision-column" aria-labelledby="revision-title">
+        <article class="score-card">
+          <div>
+            <p class="section-kicker">Score</p>
+            <h2>成绩</h2>
+          </div>
+          <strong>82</strong>
+          <span>/ 100</span>
+        </article>
+
+        <article class="revision-card">
+          <header class="column-heading">
+            <div>
+              <p class="section-kicker">Revision</p>
+              <h2 id="revision-title">译文修改</h2>
+            </div>
+            <span>修改稿</span>
+          </header>
+          <textarea id="revision-input" spellcheck="true" aria-label="译文修改稿">The Spring Festival is one of the most important traditional festivals in China. During the festival, people try to return to their hometowns and reunite with their families wherever they are. While the ways of celebration have become increasingly diverse as lifestyles change, family reunion remains the most important meaning of the festival.</textarea>
+          <footer class="revision-footer">
+            <button id="resubmit-revision" class="primary-action" type="button">再次提交</button>
+            <span>词数：<strong id="revision-word-count">0</strong></span>
+          </footer>
+        </article>
+      </section>
+
+      <aside class="review-column note-column" aria-labelledby="note-title">
+        <article class="note-editor-card">
+          <header class="column-heading">
+            <div>
+              <p class="section-kicker">Review Note</p>
+              <h2 id="note-title">复盘笔记</h2>
+            </div>
+            <button id="clear-note" type="button">清空</button>
+          </header>
+
+          <div class="note-fields">
+            <label>
+              <span>标题</span>
+              <input id="note-title-input" type="text" value="传统节日与家庭团聚" />
+            </label>
+            <label class="note-content-field">
+              <span>笔记内容</span>
+              <textarea id="note-input" placeholder="记录本题中的词语、句型、错误与改写思路……">wherever they are：无论身处何地
+reunite with their families：与家人团聚
+
+让步结构：
+While the ways of celebration have changed, family reunion remains...</textarea>
+            </label>
+            <label>
+              <span>标签</span>
+              <input id="note-tags" type="text" value="六级, 传统文化, 节日" />
+            </label>
+          </div>
+
+          <button id="save-note" class="primary-action save-note" type="button">保存复盘</button>
+        </article>
+      </aside>
+    </main>
+
+    <div id="detail-message" class="detail-message" role="status" aria-live="polite">
+      已保存
+    </div>
+    <script src="./revision-record.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>写作修改记录｜翻译写作专项练习器</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./revision-record.css" />
+  </head>
+  <body class="revision-record-body" data-record-type="writing">
+    <nav class="main-nav" aria-label="主导航">
+      <a class="nav-item" href="./index.html">主页</a>
+      <a class="nav-item" href="./translation-library.html">翻译题库</a>
+      <a class="nav-item is-active" href="./writing-library.html">写作题库</a>
+      <a class="nav-item" href="./notes.html">笔记</a>
+      <a class="nav-item" href="./statistics.html">统计</a>
+    </nav>
+
+    <header class="review-toolbar">
+      <a class="back-link" href="./writing-library.html">
+        <span aria-hidden="true">←</span>
+        <span>返回写作题库</span>
+      </a>
+      <div class="review-title">
+        <span>写作修改记录 · 六级</span>
+        <strong>数字工具是否让学习更高效</strong>
+      </div>
+      <span id="detail-save-state">内容已保存</span>
+    </header>
+
+    <main class="review-layout">
+      <section class="review-column feedback-column" aria-labelledby="feedback-title">
+        <article class="question-card">
+          <header class="column-heading">
+            <div><p class="section-kicker">Prompt</p><h1 id="feedback-title">题目</h1></div>
+            <span>150–200 词</span>
+          </header>
+          <p>
+            Write an essay on whether digital tools make learning more efficient. Explain your position with clear reasons and examples, and discuss possible limitations.
+          </p>
+        </article>
+
+        <article class="feedback-card">
+          <header class="column-heading">
+            <div><p class="section-kicker">AI Feedback</p><h2>批改建议</h2></div>
+            <span>3 项</span>
+          </header>
+          <div class="feedback-list">
+            <section>
+              <span class="feedback-index">01</span>
+              <div><h3>文章结构</h3><p>首段观点清楚，但第二段需要增加具体例子来支撑效率提升这一论点。</p></div>
+            </section>
+            <section>
+              <span class="feedback-index">02</span>
+              <div><h3>论证平衡</h3><p>建议补充数字工具可能带来注意力分散的问题，使论证更加完整。</p></div>
+            </section>
+            <section>
+              <span class="feedback-index">03</span>
+              <div><h3>语言表达</h3><p>可使用 when used purposefully 和 rather than replace 等表达提升准确性。</p></div>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="review-column revision-column" aria-labelledby="revision-title">
+        <article class="score-card">
+          <div><p class="section-kicker">Score</p><h2>成绩</h2></div>
+          <strong>78</strong><span>/ 100</span>
+        </article>
+        <article class="revision-card">
+          <header class="column-heading">
+            <div><p class="section-kicker">Revision</p><h2 id="revision-title">作文修改</h2></div>
+            <span>修改稿</span>
+          </header>
+          <textarea id="revision-input" spellcheck="true" aria-label="作文修改稿">Digital tools can make learning more efficient when they are used purposefully. They give students quick access to information and allow them to review materials at their own pace. However, constant notifications may also distract learners. Therefore, digital tools should support good learning habits rather than replace careful thinking.</textarea>
+          <footer class="revision-footer">
+            <button id="resubmit-revision" class="primary-action" type="button">再次提交</button>
+            <span>词数：<strong id="revision-word-count">0</strong></span>
+          </footer>
+        </article>
+      </section>
+
+      <aside class="review-column note-column" aria-labelledby="note-title">
+        <article class="note-editor-card">
+          <header class="column-heading">
+            <div><p class="section-kicker">Review Note</p><h2 id="note-title">复盘笔记</h2></div>
+            <button id="clear-note" type="button">清空</button>
+          </header>
+          <div class="note-fields">
+            <label><span>标题</span><input id="note-title-input" type="text" value="数字工具议论文复盘" /></label>
+            <label class="note-content-field">
+              <span>复盘内容</span>
+              <textarea id="note-input" placeholder="记录文章结构、论据、句型和修改思路……">核心观点：
+Digital tools improve efficiency when used purposefully.
+
+让步表达：
+However, constant notifications may distract learners.
+
+结论结构：
+...should support good learning habits rather than replace careful thinking.</textarea>
+            </label>
+            <label><span>标签</span><input id="note-tags" type="text" value="六级, 议论文, 科技教育" /></label>
+          </div>
+          <button id="save-note" class="primary-action save-note" type="button">保存复盘</button>
+        </article>
+      </aside>
+    </main>
+
+    <div id="detail-message" class="detail-message" role="status" aria-live="polite">已保存</div>
+    <script src="./revision-record.js"></script>
+  </body>
+</html>
