@@ -3,28 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>翻译练习｜翻译写作专项练习器</title>
-    <link rel="stylesheet" href="./base.css" />
-    <link rel="stylesheet" href="./practice.css" />
+    <title>写作练习｜翻译写作专项练习器</title>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/practice.css" />
   </head>
   <body
     class="practice-body"
-    data-practice-type="translation"
-    data-answer-key="translation-answer"
-    data-draft-key="translation-draft"
-    data-submit-url="./revision-record.html"
+    data-practice-type="writing"
+    data-answer-key="writing-answer"
+    data-draft-key="writing-draft"
+    data-submit-url="./writing-revision-record.html"
   >
     <header class="practice-toolbar">
-      <a class="back-link" href="./translation-library.html" aria-label="返回翻译题库">
+      <a class="back-link" href="./writing-library.html" aria-label="返回写作题库">
         <span aria-hidden="true">←</span>
         <span>返回题库</span>
       </a>
-
       <div class="practice-identity">
-        <span>六级翻译</span>
-        <strong>中国传统节日与家庭团聚</strong>
+        <span>六级作文</span>
+        <strong>数字工具是否让学习更高效</strong>
       </div>
-
       <label class="draft-mode">
         <span>手写草稿</span>
         <input id="draft-mode" type="checkbox" />
@@ -35,86 +33,65 @@
     <main class="practice-layout">
       <section class="practice-panel source-panel" aria-labelledby="source-title">
         <header class="panel-heading">
-          <div>
-            <p class="section-kicker">Source</p>
-            <h1 id="source-title">题目</h1>
-          </div>
-          <span>第 2 / 5 段</span>
+          <div><p class="section-kicker">Prompt</p><h1 id="source-title">写作题目</h1></div>
+          <span>六级 · 议论文</span>
         </header>
-
         <article class="source-copy">
           <p>
-            春节是中国最重要的传统节日之一，通常在农历正月初一庆祝。春节期间，无论身处何地，人们都会尽量回到家乡与家人团聚。
+            Directions: For this part, you are allowed 30 minutes to write an essay on whether digital tools make learning more efficient.
           </p>
           <p>
-            除夕夜，全家人围坐在一起吃年夜饭。年夜饭不仅是一顿丰盛的晚餐，也象征着家庭的团结与幸福。
+            You should explain your position with clear reasons and examples. You may discuss both the benefits and possible limitations of digital tools.
           </p>
-          <p>
-            随着生活方式的变化，人们庆祝春节的方式也更加多样，但家庭团聚仍然是这个节日最重要的意义。
-          </p>
+          <p>You should write at least 150 words but no more than 200 words.</p>
         </article>
-
         <footer class="source-footer">
-          <span>六级 · 传统文化</span>
-          <span>中文约 150 字</span>
+          <span>建议结构：观点 · 论证 · 结论</span>
+          <span>目标 150–200 词</span>
         </footer>
       </section>
 
       <section class="practice-panel answer-panel" aria-labelledby="answer-title">
         <header class="panel-heading">
-          <div>
-            <p class="section-kicker">Translation</p>
-            <h2 id="answer-title">答题区</h2>
-          </div>
+          <div><p class="section-kicker">Essay</p><h2 id="answer-title">答题区</h2></div>
           <span id="save-state">草稿已保存</span>
         </header>
-
         <textarea
           id="answer-input"
           spellcheck="true"
-          placeholder="在这里输入你的英文译文……"
-          aria-label="英文译文"
+          placeholder="在这里输入你的英文作文……"
+          aria-label="英文作文"
         ></textarea>
-
         <footer class="answer-footer">
           <button id="submit-answer" class="primary-action submit-answer" type="button">
-            提交译文
+            提交作文
           </button>
-          <span class="word-count">词数：<strong id="word-count">0</strong> / 300</span>
+          <span class="word-count">词数：<strong id="word-count">0</strong> / 200</span>
         </footer>
       </section>
 
       <aside class="practice-sidebar">
         <section class="timer-card" aria-labelledby="timer-title">
-          <div>
-            <p class="section-kicker">Timer</p>
-            <h2 id="timer-title">计时</h2>
-          </div>
+          <div><p class="section-kicker">Timer</p><h2 id="timer-title">计时</h2></div>
           <time id="timer-display" datetime="PT0M0S">00:00</time>
           <button id="timer-toggle" class="timer-control" type="button">暂停</button>
         </section>
-
         <section class="draft-card" aria-labelledby="draft-title">
           <header class="panel-heading">
-            <div>
-              <p class="section-kicker">Draft</p>
-              <h2 id="draft-title">草稿</h2>
-            </div>
+            <div><p class="section-kicker">Outline</p><h2 id="draft-title">提纲与草稿</h2></div>
             <button id="clear-draft" type="button">清空</button>
           </header>
           <textarea
             id="draft-input"
-            placeholder="记录词语、句式或翻译思路……"
-            aria-label="草稿"
+            placeholder="记录观点、论据、例子和段落结构……"
+            aria-label="写作提纲与草稿"
           ></textarea>
         </section>
       </aside>
     </main>
-
     <div id="submit-message" class="submit-message" role="status" aria-live="polite">
-      译文已提交
+      作文已提交
     </div>
-
-    <script src="./practice.js"></script>
+    <script src="../assets/js/practice.js"></script>
   </body>
 </html>
